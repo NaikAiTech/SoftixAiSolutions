@@ -1,0 +1,197 @@
+{
+  "version": 4,
+  "routes": {
+    "/blog/1": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/1.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/2": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/2.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/3": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/3.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/4": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/4.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/5": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/5.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/6": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/6.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/1": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/1.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/2": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/2.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/3": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/3.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/4": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/4.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/5": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/5.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/6": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/portfolio/[id]",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/6.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {
+    "/blog/[id]": {
+      "routeRegex": "^/blog/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/blog/[id].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/VivoTWr0hzna59jpAY4Xd/blog/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/portfolio/[id]": {
+      "routeRegex": "^/portfolio/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/[id].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/VivoTWr0hzna59jpAY4Xd/portfolio/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "ef4b2767710cecc586bf1fe2d3e40007",
+    "previewModeSigningKey": "4063c2addd933f5ee8247e0864efc367ec73756a10226441211897ca4d8b0f39",
+    "previewModeEncryptionKey": "36cec518cd590118a572daef00f0a610436ad4febfab4a77269e2961fd06a88f"
+  }
+}
