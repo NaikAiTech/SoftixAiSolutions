@@ -23,7 +23,7 @@ export const SectionHeader = ({
     >
       {badge && (
         <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-          /// {badge}
+          {badge}
         </span>
       )}
       <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">

@@ -49,7 +49,7 @@ export default function PortfolioProjectPage({ project }: PortfolioProjectPagePr
             </Link>
 
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// {project.category}
+              {project.category}
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               {project.title}

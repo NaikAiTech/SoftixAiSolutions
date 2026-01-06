@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { Github, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+
+const DISPLAY_NUMBER = "0303-2963333";
+const TEL_NUMBER = "03032963333";
+const WHATSAPP_INTL = "923032963333";
 
 const footerLinks = {
   services: [
@@ -32,9 +36,11 @@ export const Footer = () => {
   return (
     <footer className="bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand Column */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+          {/* Brand / Contact */}
           <div className="lg:col-span-2">
+            <h4 className="font-display font-bold text-foreground mb-4">Softix AI Solutions</h4>
+
             <Link href="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg">
                 S
@@ -43,21 +49,47 @@ export const Footer = () => {
                 Softix<span className="text-primary">AI</span>
               </span>
             </Link>
+
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
               We architect high-performance digital infrastructure. Where sleek aesthetics meet enterprise-grade code.
             </p>
+
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Mail size={16} className="text-primary" />
-                <span>hello@softixai.com</span>
+                <a
+                  href="mailto:hello@softixai.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  hello@softixai.com
+                </a>
               </div>
+
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <MessageCircle size={16} className="text-primary" />
+                <a
+                  href={`https://wa.me/${WHATSAPP_INTL}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  WhatsApp: {DISPLAY_NUMBER}
+                </a>
+              </div>
+
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Phone size={16} className="text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <a
+                  href={`tel:${TEL_NUMBER}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  Phone: {DISPLAY_NUMBER}
+                </a>
               </div>
+
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin size={16} className="text-primary" />
-                <span>San Francisco, CA</span>
+                <span>Pakistan</span>
               </div>
             </div>
           </div>
@@ -112,12 +144,28 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
+
+          {/* Location */}
+          <div>
+            <h4 className="font-display font-bold text-foreground mb-4">Location</h4>
+            <div className="rounded-xl overflow-hidden border border-border bg-background">
+              <iframe
+                src="https://www.google.com/maps?q=Softix%20AI%20Solutions&output=embed"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Softix AI Solutions Location"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-muted-foreground text-xs font-mono">
-            © {new Date().getFullYear()} Softix AI Solution. All rights reserved.
+            © {new Date().getFullYear()} Softix AI Solutions. All rights reserved.
           </div>
           
           <div className="flex gap-4">

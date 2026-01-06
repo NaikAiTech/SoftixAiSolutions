@@ -56,7 +56,7 @@ const Contact = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// Contact Us
+              Contact Us
             </span>
             <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Let's Build Something <span className="text-primary">Amazing</span>
@@ -107,10 +107,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Phone</h4>
                       <a
-                        href="tel:+15551234567"
+                        href="tel:03032963333"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +1 (555) 123-4567
+                        0303-2963333
                       </a>
                     </div>
                   </div>

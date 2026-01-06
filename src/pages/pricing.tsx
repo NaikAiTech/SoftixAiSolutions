@@ -105,7 +105,7 @@ const Pricing = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// Pricing
+              Pricing
             </span>
             <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Transparent <span className="text-primary">Pricing</span>

@@ -38,7 +38,7 @@ const Blog = () => {
             className="max-w-3xl"
           >
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// Blog
+              Blog
             </span>
             <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Insights & <span className="text-primary">Innovation</span>

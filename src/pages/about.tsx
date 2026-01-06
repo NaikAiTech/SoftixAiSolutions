@@ -90,7 +90,7 @@ const About = () => {
             className="max-w-3xl"
           >
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// About Us
+              About Us
             </span>
             <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Building the Future, <span className="text-primary">One Line at a Time</span>

@@ -105,7 +105,7 @@ const Careers = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="font-mono text-primary text-sm tracking-widest uppercase font-bold mb-4 block">
-              /// Careers
+              Careers
             </span>
             <h1 className="font-display text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Build the Future <span className="text-primary">With Us</span>
