@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
@@ -49,7 +49,7 @@ export const ProjectCard = ({
         </div>
 
         <Link
-          to={href}
+          href={href}
           className="text-primary font-bold hover:text-foreground transition-colors flex items-center gap-2 group/link"
         >
           View Case Study{" "}

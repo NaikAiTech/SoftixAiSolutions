@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ChevronDown, Search, MessageCircle } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -287,7 +287,7 @@ const FAQ = () => {
             <p className="text-muted-foreground text-lg mb-10">
               Can't find what you're looking for? Our team is here to help.
             </p>
-            <Link to="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
+            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
               Contact Us
             </Link>
           </AnimatedSection>

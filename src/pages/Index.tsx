@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, Network, Layers, Shield, Cpu, Cloud, Zap } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -100,11 +100,11 @@ const Index = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5">
-                <Link to="/contact" className="btn-solid px-8 py-4 rounded-lg text-center font-bold">
+                <Link href="/contact" className="btn-solid px-8 py-4 rounded-lg text-center font-bold">
                   Deploy Solution
                 </Link>
                 <Link
-                  to="/portfolio"
+                  href="/portfolio"
                   className="px-8 py-4 rounded-lg border border-border text-foreground hover:bg-surface transition-colors text-center flex items-center justify-center gap-2 group font-medium"
                 >
                   View Case Studies{" "}
@@ -192,7 +192,7 @@ const Index = () => {
 
           <AnimatedSection delay={0.4} className="mt-12 text-center">
             <Link
-              to="/services"
+              href="/services"
               className="inline-flex items-center gap-2 text-primary font-bold hover:text-foreground transition-colors group"
             >
               Explore All Services{" "}
@@ -215,7 +215,7 @@ const Index = () => {
 
           <AnimatedSection delay={0.2} className="mt-16 text-center">
             <Link
-              to="/portfolio"
+              href="/portfolio"
               className="btn-neon px-8 py-4 rounded-lg text-center font-bold inline-block"
             >
               View All Projects
@@ -234,7 +234,7 @@ const Index = () => {
             <p className="text-muted-foreground text-lg mb-10">
               Let's transform your vision into a high-performance digital solution.
             </p>
-            <Link to="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
+            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
               Start Your Project
             </Link>
           </AnimatedSection>

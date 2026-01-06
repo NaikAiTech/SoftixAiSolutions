@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,7 +17,7 @@ const navLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +28,10 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
+    const handleRouteChange = () => setIsMobileMenuOpen(false);
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
+  }, [router.events]);
 
   return (
     <motion.nav
@@ -44,7 +47,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -62,11 +65,12 @@ export const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
+              // Mark link active for nested routes too (e.g. /blog/1 should highlight /blog)
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={`text-sm font-medium transition-colors story-link ${
-                  location.pathname === link.href
+                  router.asPath === link.href || router.asPath.startsWith(`${link.href}/`)
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
                 }`}
@@ -79,7 +83,7 @@ export const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="btn-neon px-6 py-2.5 rounded-lg text-sm font-bold tracking-wide uppercase"
             >
               Start Project
@@ -115,9 +119,9 @@ export const Navbar = () => {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className={`block py-2 text-base font-medium transition-colors ${
-                      location.pathname === link.href
+                      router.asPath === link.href || router.asPath.startsWith(`${link.href}/`)
                         ? "text-primary"
                         : "text-muted-foreground hover:text-primary"
                     }`}
@@ -132,7 +136,7 @@ export const Navbar = () => {
                 transition={{ delay: navLinks.length * 0.05 }}
               >
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="btn-solid block text-center px-6 py-3 rounded-lg text-sm font-bold tracking-wide uppercase mt-4"
                 >
                   Start Project

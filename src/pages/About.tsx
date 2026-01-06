@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Users, Target, Award, Rocket, Heart, Lightbulb, Zap, Globe } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -255,7 +255,7 @@ const About = () => {
             <p className="text-muted-foreground text-lg mb-10">
               We're always looking for talented individuals who share our passion for innovation.
             </p>
-            <Link to="/careers" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
+            <Link href="/careers" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
               View Open Positions
             </Link>
           </AnimatedSection>

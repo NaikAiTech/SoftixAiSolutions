@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Check, HelpCircle, Zap, Crown, Building } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -172,7 +172,7 @@ const Pricing = () => {
                   </ul>
 
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className={`w-full py-4 rounded-lg text-center font-bold transition-all ${
                       plan.highlighted
                         ? "btn-solid"
@@ -215,7 +215,7 @@ const Pricing = () => {
           <AnimatedSection delay={0.4} className="mt-12 text-center">
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <Link
-              to="/contact"
+              href="/contact"
               className="text-primary font-bold hover:text-foreground transition-colors"
             >
               Get in touch →
@@ -234,7 +234,7 @@ const Pricing = () => {
             <p className="text-muted-foreground text-lg mb-10">
               Let's discuss your project and find the perfect solution for your needs.
             </p>
-            <Link to="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
+            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
               Schedule a Consultation
             </Link>
           </AnimatedSection>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   MapPin,
   Briefcase,
@@ -250,7 +250,7 @@ const Careers = () => {
             <p className="text-muted-foreground text-lg mb-10">
               We're always looking for talented people. Send us your resume and let's talk.
             </p>
-            <Link to="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
+            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
               Get in Touch
             </Link>
           </AnimatedSection>

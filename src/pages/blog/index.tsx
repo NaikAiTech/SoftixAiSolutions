@@ -1,76 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Calendar, Clock, ArrowRight, Search, Tag } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
-const categories = ["All", "AI/ML", "Development", "Design", "Industry", "Company"];
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Future of AI in Enterprise Software",
-    excerpt: "Exploring how artificial intelligence is reshaping the enterprise software landscape and what it means for businesses.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
-    category: "AI/ML",
-    author: "Sarah Williams",
-    date: "Dec 15, 2024",
-    readTime: "8 min read",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Building Scalable Microservices Architecture",
-    excerpt: "A comprehensive guide to designing and implementing microservices that can handle millions of requests.",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
-    category: "Development",
-    author: "Michael Park",
-    date: "Dec 10, 2024",
-    readTime: "12 min read",
-  },
-  {
-    id: 3,
-    title: "Design Systems That Scale",
-    excerpt: "How we built a design system that maintains consistency across 50+ products and 200+ engineers.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
-    category: "Design",
-    author: "Emily Rodriguez",
-    date: "Dec 5, 2024",
-    readTime: "6 min read",
-  },
-  {
-    id: 4,
-    title: "Machine Learning in Healthcare: A Case Study",
-    excerpt: "How we helped a major hospital network reduce diagnostic errors by 40% using AI.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
-    category: "Industry",
-    author: "Alex Chen",
-    date: "Nov 28, 2024",
-    readTime: "10 min read",
-  },
-  {
-    id: 5,
-    title: "Our Journey to 100 Employees",
-    excerpt: "Lessons learned scaling our team from a garage startup to a global technology company.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-    category: "Company",
-    author: "Alex Chen",
-    date: "Nov 20, 2024",
-    readTime: "7 min read",
-  },
-  {
-    id: 6,
-    title: "Securing Cloud-Native Applications",
-    excerpt: "Best practices for building secure applications in a cloud-native world.",
-    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=800",
-    category: "Development",
-    author: "Michael Park",
-    date: "Nov 15, 2024",
-    readTime: "9 min read",
-  },
-];
+import { blogCategories as categories, blogPosts } from "@/data/blog";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -119,7 +55,7 @@ const Blog = () => {
         <section className="py-8 relative z-10">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <AnimatedSection>
-              <Link to={`/blog/${featuredPost.id}`}>
+              <Link href={`/blog/${featuredPost.id}`}>
                 <motion.div
                   whileHover={{ y: -5 }}
                   className="card-glass rounded-2xl overflow-hidden grid lg:grid-cols-2 gap-0"
@@ -206,7 +142,7 @@ const Blog = () => {
               .filter((post) => !post.featured)
               .map((post, index) => (
                 <AnimatedSection key={post.id} delay={index * 0.1}>
-                  <Link to={`/blog/${post.id}`}>
+                  <Link href={`/blog/${post.id}`}>
                     <motion.article
                       whileHover={{ y: -5 }}
                       className="card-glass rounded-2xl overflow-hidden group h-full flex flex-col"

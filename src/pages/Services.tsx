@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   Brain,
   Code,
@@ -251,10 +251,10 @@ const Services = () => {
               Let's discuss how our services can help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold">
+              <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold">
                 Get Started
               </Link>
-              <Link to="/pricing" className="btn-neon px-10 py-5 rounded-lg text-lg font-bold">
+              <Link href="/pricing" className="btn-neon px-10 py-5 rounded-lg text-lg font-bold">
                 View Pricing
               </Link>
             </div>
