@@ -9,8 +9,6 @@ import { useToast } from "@/hooks/use-toast";
 const OFFICE_ADDRESS =
   "Plot 75, Mumtaz Market, GT Rd, opposite Chaseup Shopping Mall, Civil Lines, Gujranwala, 52250";
 
-const CONTACT_MAP_IFRAME_SRC = process.env.NEXT_PUBLIC_CONTACT_MAP_IFRAME_SRC;
-
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -152,27 +150,17 @@ const Contact = () => {
 
                 {/* Google Map */}
                 <div className="aspect-video bg-surface rounded-xl border border-border overflow-hidden">
-                  {CONTACT_MAP_IFRAME_SRC ? (
-                    <iframe
-                      src={CONTACT_MAP_IFRAME_SRC}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Office Location"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-muted-foreground px-6 text-center">
-                      <div className="space-y-2">
-                        <MapPin size={40} className="opacity-30 mx-auto" />
-                        <p className="text-sm">
-                          Set <span className="font-mono">NEXT_PUBLIC_CONTACT_MAP_IFRAME_SRC</span>{" "}
-                          in Vercel to your provided Google Maps iframe URL.
-                        </p>
-                      </div>
-                    </div>
-                  )}
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4775.605489750734!2d74.1838019209295!3d32.180968175706965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f29775356e6cf%3A0x548ca11b1fa38dcb!2sSAIS%20(Softix%20AI%20Solutions)!5e0!3m2!1sen!2s!4v1767761693135!5m2!1sen!2s"
+                    width="600"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                    title="SAIS (Softix AI Solutions) Location"
+                  />
                 </div>
               </div>
             </AnimatedSection>

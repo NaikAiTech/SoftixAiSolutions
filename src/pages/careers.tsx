@@ -1,5 +1,5 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   MapPin,
   Briefcase,
@@ -11,11 +11,14 @@ import {
   GraduationCap,
   ArrowRight,
   Clock,
+  Send,
+  CheckCircle,
 } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { useToast } from "@/hooks/use-toast";
 
 const benefits = [
   { icon: Heart, title: "Health & Wellness", description: "Comprehensive health, dental, and vision coverage" },
@@ -89,6 +92,56 @@ const values = [
 ];
 
 const Careers = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    projectType: "",
+    budget: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await res.json()) as { ok: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch (err) {
+      toast({
+        title: "Message failed",
+        description: err instanceof Error ? err.message : "Please try again in a moment.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <div className="noise-overlay" />
@@ -240,20 +293,176 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Careers Contact Form */}
       <section className="py-32 bg-surface relative z-10">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2 className="font-display text-4xl font-bold text-foreground mb-6">
-              Don't See the Right Role?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10">
-              We're always looking for talented people. Send us your resume and let's talk.
-            </p>
-            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
-              Get in Touch
-            </Link>
-          </AnimatedSection>
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <AnimatedSection>
+              <SectionHeader
+                badge="Contact"
+                title="Apply / Connect With Us"
+                description="Send your details and we’ll reach out. Your message is delivered directly to our inbox."
+              />
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <div className="card-glass p-8 md:p-10 rounded-2xl">
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-10"
+                  >
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle size={32} className="text-primary" />
+                    </div>
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-muted-foreground mb-6">
+                      Thanks for reaching out. We&apos;ll get back to you soon.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormData({
+                          name: "",
+                          email: "",
+                          company: "",
+                          projectType: "",
+                          budget: "",
+                          message: "",
+                        });
+                      }}
+                      className="text-primary font-bold hover:text-foreground transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                          Your Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="input-light w-full rounded-lg px-4 py-3"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="input-light w-full rounded-lg px-4 py-3"
+                          placeholder="Enter your email"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                          Company
+                        </label>
+                        <input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleChange}
+                          className="input-light w-full rounded-lg px-4 py-3"
+                          placeholder="Your Company"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                          Project Type
+                        </label>
+                        <select
+                          name="projectType"
+                          value={formData.projectType}
+                          onChange={handleChange}
+                          className="input-light w-full rounded-lg px-4 py-3"
+                        >
+                          <option value="">Select a type</option>
+                          <option value="web">Web Application</option>
+                          <option value="mobile">Mobile App</option>
+                          <option value="ai">AI/ML Solution</option>
+                          <option value="enterprise">Enterprise Platform</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                        Budget Range
+                      </label>
+                      <select
+                        name="budget"
+                        value={formData.budget}
+                        onChange={handleChange}
+                        className="input-light w-full rounded-lg px-4 py-3"
+                      >
+                        <option value="">Select budget range</option>
+                        <option value="10k-25k">$10,000 - $25,000</option>
+                        <option value="25k-50k">$25,000 - $50,000</option>
+                        <option value="50k-100k">$50,000 - $100,000</option>
+                        <option value="100k+">$100,000+</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                        Project Details *
+                      </label>
+                      <textarea
+                        name="message"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="input-light w-full rounded-lg px-4 py-3 resize-none"
+                        placeholder="Tell us about your project, goals, and timeline..."
+                      />
+                    </div>
+
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full btn-solid py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          Send Message
+                        </>
+                      )}
+                    </motion.button>
+                  </form>
+                )}
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
