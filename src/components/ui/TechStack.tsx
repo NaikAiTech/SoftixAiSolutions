@@ -20,12 +20,12 @@ export const TechStack = () => {
         viewport={{ once: true }}
         className="mb-6"
       >
-        <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider font-bold text-center">
+        <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider font-bold text-left">
           Powered By Leading Technologies
         </p>
       </motion.div>
       
-      <div className="flex gap-8 justify-center flex-wrap">
+      <div className="flex gap-8 justify-start flex-wrap">
         {technologies.map((tech, index) => (
           <motion.div
             key={tech.name}
@@ -34,7 +34,7 @@ export const TechStack = () => {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.1, y: -5 }}
-            className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-surface transition-colors cursor-pointer"
+            className="flex flex-col items-start gap-2 p-4 rounded-xl hover:bg-surface transition-colors cursor-pointer"
           >
             <span className="text-3xl">{tech.icon}</span>
             <span className="text-xs font-medium text-muted-foreground">{tech.name}</span>

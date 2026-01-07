@@ -6,6 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
 
+const OFFICE_ADDRESS =
+  "Plot 75, Mumtaz Market, GT Rd, opposite Chaseup Shopping Mall, Civil Lines, Gujranwala, 52250";
+
+const CONTACT_MAP_IFRAME_SRC = process.env.NEXT_PUBLIC_CONTACT_MAP_IFRAME_SRC;
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,15 +28,32 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+      const data = (await res.json()) as { ok: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch (err) {
+      toast({
+        title: "Message failed",
+        description: err instanceof Error ? err.message : "Please try again in a moment.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -122,18 +144,35 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Office</h4>
                       <p className="text-muted-foreground">
-                        123 Innovation Drive<br />
-                        San Francisco, CA 94105
+                        {OFFICE_ADDRESS}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Map placeholder */}
+                {/* Google Map */}
                 <div className="aspect-video bg-surface rounded-xl border border-border overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                    <MapPin size={40} className="opacity-30" />
-                  </div>
+                  {CONTACT_MAP_IFRAME_SRC ? (
+                    <iframe
+                      src={CONTACT_MAP_IFRAME_SRC}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Office Location"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground px-6 text-center">
+                      <div className="space-y-2">
+                        <MapPin size={40} className="opacity-30 mx-auto" />
+                        <p className="text-sm">
+                          Set <span className="font-mono">NEXT_PUBLIC_CONTACT_MAP_IFRAME_SRC</span>{" "}
+                          in Vercel to your provided Google Maps iframe URL.
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
@@ -187,7 +226,7 @@ const Contact = () => {
                           value={formData.name}
                           onChange={handleChange}
                           className="input-light w-full rounded-lg px-4 py-3"
-                          placeholder="John Doe"
+                          placeholder="Enter your name"
                         />
                       </div>
                       <div>
@@ -201,7 +240,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           className="input-light w-full rounded-lg px-4 py-3"
-                          placeholder="john@company.com"
+                          placeholder="Enter your email"
                         />
                       </div>
                     </div>

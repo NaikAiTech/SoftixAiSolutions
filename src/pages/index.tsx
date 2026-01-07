@@ -68,27 +68,35 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-surface border border-border mb-8 shadow-sm"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
+                System V4.0 Online
+              </span>
+            </motion.div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            {/* Content (from headline to buttons) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="flex flex-col justify-start"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-surface border border-border mb-8 shadow-sm"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
-                  System V4.0 Online
-                </span>
-              </motion.div>
 
               <h1 className="font-display text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
                 Engineering <br />
@@ -96,7 +104,7 @@ const Index = () => {
               </h1>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-lg border-l-4 border-primary pl-6 bg-gradient-to-r from-primary/5 to-transparent py-2">
-                We architect high-performance digital infrastructure. Where sleek aesthetics meet enterprise-grade code.
+                We engineer intelligent digital ecosystems that blend cutting-edge design with scalable, enterprise-ready technology—built for performance, security, and growth.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5">
@@ -111,8 +119,6 @@ const Index = () => {
                   <ArrowRight size={16} className="text-primary transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-
-              <TechStack />
             </motion.div>
 
             {/* Visual / Canvas */}
@@ -120,11 +126,11 @@ const Index = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative h-[500px] w-full"
+              className="relative w-full h-[500px] lg:h-full"
             >
               <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent opacity-60 blur-3xl" />
               
-              <div className="absolute inset-4 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-float">
+              <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-float">
                 {/* Window Controls */}
                 <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
                   <div className="w-3 h-3 rounded-full bg-border" />
@@ -164,6 +170,10 @@ const Index = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+
+          <div className="mt-12">
+            <TechStack />
           </div>
         </div>
       </section>

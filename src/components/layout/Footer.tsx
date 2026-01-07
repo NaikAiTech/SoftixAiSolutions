@@ -34,7 +34,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="bg-surface border-t border-border shadow-[0_-12px_40px_rgba(255,255,255,0.22)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand / Contact */}
@@ -51,7 +51,7 @@ export const Footer = () => {
             </Link>
 
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
-              We architect high-performance digital infrastructure. Where sleek aesthetics meet enterprise-grade code.
+              We engineer intelligent digital ecosystems that blend cutting-edge design with scalable, enterprise-ready technology—built for performance, security, and growth.
             </p>
 
             <div className="space-y-3">

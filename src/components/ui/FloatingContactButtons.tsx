@@ -11,7 +11,7 @@ export function FloatingContactButtons() {
         href={`https://wa.me/${WHATSAPP_INTL}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="h-12 w-12 rounded-full bg-[#25D366] text-white shadow-lg hover:brightness-110 transition"
+        className="h-12 w-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:brightness-110 transition"
         aria-label={`WhatsApp ${DISPLAY_NUMBER}`}
         title={`WhatsApp ${DISPLAY_NUMBER}`}
       >
