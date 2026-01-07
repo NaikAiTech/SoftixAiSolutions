@@ -91,7 +91,7 @@ const values = [
   },
 ];
 
-const Careers = () => {
+function CareersContactFormCard() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -141,6 +141,165 @@ const Careers = () => {
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  return (
+    <div className="card-glass p-8 md:p-10 rounded-2xl">
+      {isSubmitted ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center py-10"
+        >
+          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle size={32} className="text-primary" />
+          </div>
+          <h3 className="font-display text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
+          <p className="text-muted-foreground mb-6">
+            Thanks for reaching out. We&apos;ll get back to you soon.
+          </p>
+          <button
+            onClick={() => {
+              setIsSubmitted(false);
+              setFormData({
+                name: "",
+                email: "",
+                company: "",
+                projectType: "",
+                budget: "",
+                message: "",
+              });
+            }}
+            className="text-primary font-bold hover:text-foreground transition-colors"
+          >
+            Send another message
+          </button>
+        </motion.div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                Your Name *
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="input-light w-full rounded-lg px-4 py-3"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="input-light w-full rounded-lg px-4 py-3"
+                placeholder="Enter your email"
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                Company
+              </label>
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className="input-light w-full rounded-lg px-4 py-3"
+                placeholder="Your Company"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+                Project Type
+              </label>
+              <select
+                name="projectType"
+                value={formData.projectType}
+                onChange={handleChange}
+                className="input-light w-full rounded-lg px-4 py-3"
+              >
+                <option value="">Select a type</option>
+                <option value="web">Web Application</option>
+                <option value="mobile">Mobile App</option>
+                <option value="ai">AI/ML Solution</option>
+                <option value="enterprise">Enterprise Platform</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+              Budget Range
+            </label>
+            <select
+              name="budget"
+              value={formData.budget}
+              onChange={handleChange}
+              className="input-light w-full rounded-lg px-4 py-3"
+            >
+              <option value="">Select budget range</option>
+              <option value="10k-25k">$10,000 - $25,000</option>
+              <option value="25k-50k">$25,000 - $50,000</option>
+              <option value="50k-100k">$50,000 - $100,000</option>
+              <option value="100k+">$100,000+</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
+              Project Details *
+            </label>
+            <textarea
+              name="message"
+              required
+              rows={5}
+              value={formData.message}
+              onChange={handleChange}
+              className="input-light w-full rounded-lg px-4 py-3 resize-none"
+              placeholder="Tell us about your project, goals, and timeline..."
+            />
+          </div>
+
+          <motion.button
+            type="submit"
+            disabled={isSubmitting}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full btn-solid py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>
+                <Send size={18} />
+                Send Message
+              </>
+            )}
+          </motion.button>
+        </form>
+      )}
+    </div>
+  );
+}
+
+const Careers = () => {
 
   return (
     <div className="min-h-screen bg-background">
@@ -296,171 +455,18 @@ const Careers = () => {
       {/* Careers Contact Form */}
       <section className="py-32 bg-surface relative z-10">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+              Contact Us{" "}
+            </h2>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <AnimatedSection>
-              <SectionHeader
-                badge="Contact"
-                title="Apply / Connect With Us"
-                description="Send your details and we’ll reach out. Your message is delivered directly to our inbox."
-              />
+              <CareersContactFormCard />
             </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <div className="card-glass p-8 md:p-10 rounded-2xl">
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-10"
-                  >
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle size={32} className="text-primary" />
-                    </div>
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                      Message Sent!
-                    </h3>
-                    <p className="text-muted-foreground mb-6">
-                      Thanks for reaching out. We&apos;ll get back to you soon.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setIsSubmitted(false);
-                        setFormData({
-                          name: "",
-                          email: "",
-                          company: "",
-                          projectType: "",
-                          budget: "",
-                          message: "",
-                        });
-                      }}
-                      className="text-primary font-bold hover:text-foreground transition-colors"
-                    >
-                      Send another message
-                    </button>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                          Your Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          required
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="input-light w-full rounded-lg px-4 py-3"
-                          placeholder="Enter your name"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="input-light w-full rounded-lg px-4 py-3"
-                          placeholder="Enter your email"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                          Company
-                        </label>
-                        <input
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="input-light w-full rounded-lg px-4 py-3"
-                          placeholder="Your Company"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                          Project Type
-                        </label>
-                        <select
-                          name="projectType"
-                          value={formData.projectType}
-                          onChange={handleChange}
-                          className="input-light w-full rounded-lg px-4 py-3"
-                        >
-                          <option value="">Select a type</option>
-                          <option value="web">Web Application</option>
-                          <option value="mobile">Mobile App</option>
-                          <option value="ai">AI/ML Solution</option>
-                          <option value="enterprise">Enterprise Platform</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                        Budget Range
-                      </label>
-                      <select
-                        name="budget"
-                        value={formData.budget}
-                        onChange={handleChange}
-                        className="input-light w-full rounded-lg px-4 py-3"
-                      >
-                        <option value="">Select budget range</option>
-                        <option value="10k-25k">$10,000 - $25,000</option>
-                        <option value="25k-50k">$25,000 - $50,000</option>
-                        <option value="50k-100k">$50,000 - $100,000</option>
-                        <option value="100k+">$100,000+</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-mono text-primary mb-2 uppercase font-bold">
-                        Project Details *
-                      </label>
-                      <textarea
-                        name="message"
-                        required
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="input-light w-full rounded-lg px-4 py-3 resize-none"
-                        placeholder="Tell us about your project, goals, and timeline..."
-                      />
-                    </div>
-
-                    <motion.button
-                      type="submit"
-                      disabled={isSubmitting}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full btn-solid py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 disabled:opacity-50"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send size={18} />
-                          Send Message
-                        </>
-                      )}
-                    </motion.button>
-                  </form>
-                )}
-              </div>
+            <AnimatedSection delay={0.1}>
+              <CareersContactFormCard />
             </AnimatedSection>
           </div>
         </div>
