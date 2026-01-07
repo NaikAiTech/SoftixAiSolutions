@@ -457,15 +457,12 @@ const Careers = () => {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              Contact Us{" "}
+              Contact Us Form
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-4xl mx-auto">
             <AnimatedSection>
-              <CareersContactFormCard />
-            </AnimatedSection>
-            <AnimatedSection delay={0.1}>
               <CareersContactFormCard />
             </AnimatedSection>
           </div>

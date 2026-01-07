@@ -50,10 +50,6 @@ export default function Home() {
                   />
                 </Link>
               </div>
-
-              <div className="mt-10">
-                <TechStack />
-              </div>
             </motion.div>
 
             {/* Visual / Canvas Card */}
@@ -61,10 +57,8 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative w-full h-[520px] lg:h-full"
+              className="relative w-full min-h-[420px]"
             >
-              <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent opacity-60 blur-3xl" />
-
               <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-float">
                 {/* Window Controls */}
                 <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
@@ -77,14 +71,17 @@ export default function Home() {
                 <div className="flex-1 relative bg-card">
                   {/* Web-development themed image */}
                   <img
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600"
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1600"
                     alt="Web development team working on laptops"
-                    className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
             </motion.div>
+          </div>
+
+          <div className="mt-12">
+            <TechStack />
           </div>
         </div>
       </section>
