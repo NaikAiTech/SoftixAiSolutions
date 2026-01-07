@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Network, Layers, Shield, Cpu, Cloud, Zap, Star } from "lucide-react";
+import { ArrowRight, Network, Layers, Shield, Cpu, Cloud, Zap } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
@@ -10,6 +10,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { StatsCounter } from "@/components/ui/StatsCounter";
 import { TechStack } from "@/components/ui/TechStack";
+import Testimonials from "@/components/ui/Testimonials";
 
 const services = [
   {
@@ -53,30 +54,6 @@ const stats = [
   { value: 50, suffix: "+", label: "Enterprise Clients" },
   { value: 99, suffix: "%", label: "Client Satisfaction" },
   { value: 24, suffix: "/7", label: "Support Available" },
-];
-
-const reviews = [
-  {
-    name: "Ayesha K.",
-    role: "Founder",
-    rating: 5,
-    text:
-      "Softix AI Solutions delivered exactly what we needed—fast, secure, and beautifully designed. Communication was excellent throughout.",
-  },
-  {
-    name: "Umar S.",
-    role: "Product Lead",
-    rating: 5,
-    text:
-      "High-quality engineering with a strong focus on performance. The final result feels premium and scales cleanly with our growth.",
-  },
-  {
-    name: "Hassan R.",
-    role: "Operations Manager",
-    rating: 5,
-    text:
-      "Professional team and smooth delivery. They understood requirements quickly and implemented a polished solution with great attention to detail.",
-  },
 ];
 
 const Index = () => {
@@ -258,36 +235,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Google Reviews */}
-      <section className="py-32 relative z-10 bg-surface">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Google Reviews
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10">
-              Trusted by teams who value performance, security, and clean execution.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              {reviews.map((review) => (
-                <div key={review.name} className="card-glass p-6 rounded-2xl">
-                  <div className="flex items-center gap-1 text-primary mb-4">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                      <Star key={i} size={16} className="fill-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    “{review.text}”
-                  </p>
-                  <div className="text-foreground font-bold">{review.name}</div>
-                  <div className="text-muted-foreground text-xs">{review.role}</div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-32 relative z-10 bg-surface">

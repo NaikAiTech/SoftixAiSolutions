@@ -129,17 +129,6 @@ const About = () => {
                 solutions that don't just meet requirements—they exceed expectations and 
                 open new possibilities.
               </p>
-
-              <div className="mt-10 card-glass p-8 rounded-2xl">
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-                  Our Vision
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To be the trusted partner for businesses seeking intelligent, secure, and scalable
-                  digital ecosystems—where design excellence and engineering precision come together
-                  to drive long-term growth.
-                </p>
-              </div>
             </AnimatedSection>
             
             <AnimatedSection delay={0.2} direction="left">
@@ -148,6 +137,40 @@ const About = () => {
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
                   alt="Team collaboration"
+                  className="relative rounded-2xl shadow-2xl border border-border"
+                />
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision (matching Mission section layout) */}
+      <section className="py-32 bg-surface relative z-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <SectionHeader
+                badge="Our Vision"
+                title="Building a Smarter Digital Future"
+              />
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Our vision is to become the trusted partner for organizations seeking intelligent,
+                secure, and scalable digital ecosystems—where design excellence and engineering
+                precision work together to unlock long-term growth.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                We aim to set the standard for modern, enterprise-ready solutions that deliver
+                measurable impact—through performance, reliability, and innovation.
+              </p>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.2} direction="left">
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-3xl" />
+                <img
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
+                  alt="Vision and strategy"
                   className="relative rounded-2xl shadow-2xl border border-border"
                 />
               </div>
