@@ -129,6 +129,17 @@ const About = () => {
                 solutions that don't just meet requirements—they exceed expectations and 
                 open new possibilities.
               </p>
+
+              <div className="mt-10 card-glass p-8 rounded-2xl">
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                  Our Vision
+                </h3>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  To be the trusted partner for businesses seeking intelligent, secure, and scalable
+                  digital ecosystems—where design excellence and engineering precision come together
+                  to drive long-term growth.
+                </p>
+              </div>
             </AnimatedSection>
             
             <AnimatedSection delay={0.2} direction="left">

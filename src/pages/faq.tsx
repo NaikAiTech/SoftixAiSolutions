@@ -23,7 +23,7 @@ const faqCategories = [
       {
         question: "Where is Softix AI Solution located?",
         answer:
-          "Our headquarters is in San Francisco, CA, with additional offices in London and Singapore. However, we operate as a remote-first company with team members across the globe, allowing us to serve clients worldwide.",
+          "Softix AI Solution is headquartered in Gujranwala, Pakistan, at Plot 75, Mumtaz Market, GT Road, opposite Chaseup Shopping Mall, Civil Lines, Gujranwala (5225). We operate as a remote-first company, collaborating with clients and partners worldwide.",
       },
     ],
   },
