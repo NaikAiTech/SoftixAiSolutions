@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
 import { TechStack } from "@/components/ui/TechStack";
 
 export default function Home() {
@@ -75,13 +76,15 @@ export default function Home() {
                 </div>
 
                 <div className="flex-1 relative bg-card">
-                  {/* Web-development themed image */}
+                  {/* Web-development themed image (behind canvas) */}
                   <img
-                    src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1600"
-                    alt="Web development team working on laptops"
-                    className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"
+                    src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1600"
+                    alt="Web development"
+                    className="absolute inset-0 w-full h-full object-cover opacity-25 pointer-events-none"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent pointer-events-none" />
+
+                  <ParticleCanvas />
                 </div>
               </div>
             </motion.div>
