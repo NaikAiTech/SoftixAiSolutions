@@ -25,56 +25,51 @@ const services = [
     id: "ai",
     icon: Brain,
     title: "AI & Machine Learning",
-    description: "Transform your business with intelligent automation and predictive analytics.",
+    description: "Practical AI that reduces manual work and improves decisions—no hype, only measurable impact.",
     features: [
-      "Custom ML Model Development",
-      "Natural Language Processing",
-      "Computer Vision Solutions",
-      "Predictive Analytics",
-      "AI-Powered Automation",
-      "Chatbots & Virtual Assistants",
+      "AI support assistants (Web / WhatsApp)",
+      "Smart follow-ups & notification engines",
+      "Workflow automation (n8n + custom logic)",
+"AI agents for repetitive internal taskss",
     ],
   },
   {
     id: "software",
     icon: Code,
     title: "Custom Software Development",
-    description: "Bespoke software solutions tailored to your unique business requirements.",
+    description: "We design the full customer journey—capture, onboarding, retention—then build custom software to support it.",
     features: [
-      "Full-Stack Web Applications",
-      "API Development & Integration",
-      "Legacy System Modernization",
-      "SaaS Platform Development",
-      "E-commerce Solutions",
-      "CRM & ERP Systems",
+      "Lead-to-customer pipelines (custom CRM logic)",
+      "Onboarding flows & customer portals",
+      "Subscriptions, accounts & permissions",
+      "Customer insights, analytics & reporting",
+      
     ],
   },
   {
     id: "enterprise",
     icon: Layers,
     title: "Enterprise Platforms",
-    description: "Scalable, secure platforms built for enterprise-grade performance.",
+    description: "Secure, scalable web applications built around your business logic—not templates.",
     features: [
-      "Microservices Architecture",
-      "High-Availability Systems",
-      "Real-time Data Processing",
-      "Multi-tenant Platforms",
-      "Enterprise Integration",
-      "Performance Optimization",
+      "Admin dashboards & internal tools",
+      "Multi-tenant SaaS architecture",
+      "API-first development & integrations",
+      "Performance, security & scalability",
+      
     ],
   },
   {
     id: "cloud",
     icon: Cloud,
-    title: "Cloud Infrastructure",
-    description: "Modern cloud solutions for scalability, reliability, and cost efficiency.",
+    title: "Integrations & Workflow Engineering",
+    description: "We connect your tools into one system so your business runs smoother.",
     features: [
-      "Cloud Migration Strategy",
-      "AWS / Azure / GCP",
-      "Serverless Architecture",
-      "Container Orchestration",
-      "DevOps & CI/CD",
-      "Infrastructure as Code",
+      "CRM ↔ Website ↔ Payments automation",
+      "Email/SMS/WhatsApp system integration",
+      "Third‑party APIs & data sync",
+      "Event tracking & operational alerts",
+      
     ],
   },
   {
@@ -88,21 +83,20 @@ const services = [
       "Progressive Web Apps",
       "Mobile-First Design",
       "Offline Capabilities",
-      "Push Notifications",
+      
     ],
   },
   {
     id: "security",
     icon: Shield,
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions to protect your digital assets.",
+    title: "Custom Commerce & Marketplaces",
+    description: "We engineer commerce around how you sell. WooCommerce/Laravel-based—fully customized.",
     features: [
-      "Security Audits",
-      "Penetration Testing",
-      "Compliance (SOC2, HIPAA)",
-      "Identity Management",
-      "Encryption Solutions",
-      "Incident Response",
+      "Pricing & product logic customization",
+      "Checkout, payments & order workflows",
+      "Vendor/customer roles & permissions",
+      "Automation for fulfillment & ops",
+      
     ],
   },
 ];
@@ -153,8 +147,7 @@ const Services = () => {
               Full-Stack <span className="text-primary">Technology</span> Solutions
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              From AI-powered systems to enterprise platforms, we deliver end-to-end 
-              solutions that drive real business results.
+              We don’t sell templates. We design the customer journey first, then engineer custom software and automation that helps you acquire, onboard, and retain customers.
             </p>
           </motion.div>
         </div>

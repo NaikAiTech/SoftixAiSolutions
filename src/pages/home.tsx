@@ -129,7 +129,7 @@ const Index = () => {
               <motion.img
                 src="./images/hero.jpg"
                 alt="Developer working on laptop"
-                className="relative z-10 w-[420px] md:w-[420px] rounded-2xl"
+                className="relative z-10 w-[520px] md:w-[520px] rounded-2xl"
               />
 
               {/* Floating Cards */}
