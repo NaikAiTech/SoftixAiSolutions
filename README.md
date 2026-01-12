@@ -1,73 +1,44 @@
-# Welcome to your Lovable project
+# Dial A Vet
 
-## Project info
+Next.js app with Tailwind, Supabase (Postgres), Stripe, Twilio, SendGrid, Calendly embed.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Getting started:
 
-## How can I edit this code?
+1. Copy `.env.example` to `.env` and fill values
+2. Install deps: `npm install`
+3. Setup DB (Supabase): run SQL to create tables (see `supabase/schema.sql`)
+4. Run dev: `npm run dev`
 
-There are several ways of editing your application.
+Primary routes:
+- `/` Landing page
+- `/book-a-vet-consultation` Calendly scheduling embed (paid or partner free)
+- `/api/health` Health check
+- `/login` (legacy) – consider redirecting to `/book-a-vet-consultation` or `/activate`
 
-**Use Lovable**
+Calendly:
+- Paid booking embed: set URL in `lib/calendly.ts` (`CALENDLY_PAID_URL`)
+- Partner free embed: set URL in `lib/calendly.ts` (`CALENDLY_FREE_URL`)
+- Optional API: provide `CALENDLY_API_TOKEN`, `CALENDLY_OWNER`, `CALENDLY_EVENT` to enable `/api/calendly/next` for the next available banner
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Notes:
+- Fonts: Product Sans/Google Sans (no bold). Tailwind default font stack included.
+- Colors: background `#f5f7f6`, text `#000000`.
+- Uses Supabase JS client via a Prisma-compat shim under `lib/prisma.ts`.
+- Zoom video via Calendly; all previous custom booking logic deprecated.
 
-Changes made via Lovable will be committed automatically to this repo.
+Notifications:
+- Booking confirmation, reschedule, and status updates (cancelled/completed) are sent via SendGrid (email) and Twilio (SMS).
+- Ensure env vars are set: `SENDGRID_API_KEY`, `SENDGRID_FROM`, `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM_NUMBER`.
+- Fallback notifier endpoint: `POST /api/notify` with `{ appointmentId, kind: 'reschedule'|'cancel'|'completed' }`.
 
-**Use your preferred IDE**
+Update: Minor docs tweak to trigger deployment (availability now uses UTC).
+Update: Terminology refreshed to “Global Vet Team”; homepage adds AI Vet Chat (https://vetzo.ai).
+Update: Switch booking to Calendly embeds; remove memberships/user panels; vet dashboard deprecated.
+Update: Minor README touch to reflect latest marketing page refreshes.
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Developed by Naik AI Tech
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Next.js
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Developer: Talib Saleem Naik
+- Email: admin@naikaitech.com
+- Website: https://naikaitech.com

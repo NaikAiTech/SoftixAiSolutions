@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HSL variables for shadcn-compatible theming */
+:root {
+  --foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 168 72% 32%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 168 58% 66%;
+  --accent-foreground: 168 72% 20%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 210 18% 90%;
+  --input: 210 18% 90%;
+  --ring: 215 20% 65%;
+  --radius: 12px;
+
+  /* Use HSL triple so Tailwind bg-background (hsl(var(--background))) renders correctly */
+  --background: 160 10% 96%; /* ≈ #f5f7f6 */
+  --text: #000000;
+  --ink: #0F172A;
+  --brand: #178F7A;
+  --brand-2: #77D9A3;
+  --line: rgba(0,0,0,.08);
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'Product Sans', 'Google Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sidebar scrollbar smoothing and unification */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.12);
+  border-radius: 8px;
+}
+.sidebar-scroll { scrollbar-width: thin; }
+/* react-day-picker styling to match design */
+.rdp {
+  --rdp-cell-size: 38px;
+  --rdp-background-color: hsl(var(--background));
+  --rdp-foreground-color: hsl(var(--foreground));
+  --rdp-accent-color: hsl(var(--primary));
+  --rdp-accent-color-foreground: hsl(var(--primary-foreground));
+  --rdp-border-color: hsl(var(--border));
+  --rdp-outline: 2px solid hsl(var(--ring));
+  --rdp-outline-offset: 2px;
+}
+.rdp-caption_label { font-weight: 500; }
+.rdp-nav_button { display:flex; align-items:center; justify-content:center; width:var(--rdp-cell-size); height:var(--rdp-cell-size); border-radius: var(--radius); background-color: transparent; color: hsl(var(--foreground)); transition: background-color .2s; }
+.rdp-nav_button:hover { background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+.rdp-day { border-radius: var(--radius); transition: background-color .2s, color .2s; }
+.rdp-day_selected { background-color: var(--rdp-accent-color); color: var(--rdp-accent-color-foreground); }
+.rdp-day_selected:hover { background-color: var(--rdp-accent-color); color: var(--rdp-accent-color-foreground); }
+.rdp-day_today { background-color: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+.rdp-day_today:hover { background-color: hsl(var(--muted)); color: hsl(var(--muted-foreground)); }
+.rdp-day_range_middle { background-color: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+.rdp-day_range_start, .rdp-day_range_end { background-color: var(--rdp-accent-color); color: var(--rdp-accent-color-foreground); }
+.rdp-day_disabled, .rdp-day_outside { color: hsl(var(--muted-foreground)); opacity:.5; }
+
+.container {
+  @apply mx-auto max-w-6xl px-4;
+}
+
+/* Utility tokens */
+.chip { display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:#fff; border:1px solid var(--line); box-shadow:0 2px 6px var(--ring); font-size:13px; color:#374151 }
+.btn { border:0; border-radius:999px; background:#000; color:#fff; padding:10px 16px; font-weight:500; cursor:pointer }
+.btn-outline { border:1px solid var(--line); background:#fff; color:#111; padding:10px 16px; border-radius:12px }
+.card { background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:0 8px 24px var(--ring) }
+.surface { background: linear-gradient(135deg, #F1FBF6 0%, #F9FEFB 100%) }
+
+/* Typography scale */
+.h1 { font-size: clamp(30px, 5.2vw, 48px); line-height: 1.08; font-weight: 500; letter-spacing: -0.3px; margin: 0; }
+.h2 { font-size: clamp(18px, 2.6vw, 26px); line-height: 1.2; font-weight: 500; color: var(--muted); margin: 0; }
+.h3 { font-size: clamp(16px, 2.2vw, 22px); line-height: 1.25; font-weight: 500; margin: 0; }
+.lead { color: var(--muted); font-size: 16px; }
+.muted { color: var(--muted); }
+.section-title { font-size: 22px; font-weight: 600; letter-spacing: -0.2px; }
+
+/* Inputs/tables */
+.input { padding:10px 14px; border:1px solid var(--line); border-radius:12px; font: inherit; width:100%; background:#fff }
+.table thead th { padding:12px 10px; text-align:left; font-size:12px; text-transform:uppercase; color:#6b7280; border-bottom:1px solid var(--line) }
+.table tbody td { padding:12px 10px; border-bottom:1px solid var(--line) }
+
+/* Landing theme helpers */
+.dialavet h1, .dialavet h2, .dialavet h3 { letter-spacing: -0.3px; font-weight: 500; }
+.dialavet p, .dialavet li, .dialavet span, .dialavet a { font-weight: 400; }
+.dialavet h1, .dialavet h2, .dialavet h3, .dialavet h4, .dialavet h5, .dialavet h6, .dialavet summary, .dialavet button { font-weight: 500; }
+@keyframes dog-wiggle { 
+  0% { transform: rotate(0) } 
+  15% { transform: rotate(-12deg) } 
+  30% { transform: rotate(10deg) } 
+  45% { transform: rotate(-8deg) } 
+  60% { transform: rotate(6deg) } 
+  100% { transform: rotate(0) } 
+}
+.dog-wiggle { 
+  display: inline-block; 
+  animation: dog-wiggle 1.2s ease-in-out infinite; 
+  animation-delay: 3s; 
+}
+@keyframes floaty { 
+  0% { transform: translateY(0) } 
+  50% { transform: translateY(-6px) } 
+  100% { transform: translateY(0) } 
+}
+.floaty { animation: floaty 4s ease-in-out infinite; }
+.card { box-shadow: 0 6px 18px rgba(16,24,40,.06); }
+
+
+/* Rich HTML content (answers) */
+.dav-html { color:#111827; line-height:1.58; }
+.dav-html * { line-height: inherit; }
+.dav-html h1,.dav-html h2,.dav-html h3 { font-weight:600; letter-spacing:-0.2px; margin:1.4em 0 .6em }
+.dav-html h4,.dav-html h5,.dav-html h6 { font-weight:600; margin:1.2em 0 .5em }
+.dav-html p { margin: .9em 0; }
+.dav-html ul,.dav-html ol { padding-left: 1.25rem; margin: .9em 0; list-style-position: outside; }
+.dav-html ul ul,.dav-html ol ol { margin-top: .35em; }
+.dav-html ul { list-style-type: disc; }
+.dav-html ol { list-style-type: decimal; }
+.dav-html li { margin: .35em 0; }
+.dav-html a { color:#0ea5e9; text-decoration: underline; }
+.dav-html blockquote { border-left: 3px solid rgba(0,0,0,.12); padding-left: 12px; color:#374151; margin: 1em 0; font-style: italic; }
+.dav-html hr { margin: 2em 0; border-color: rgba(0,0,0,.08); }
+.dav-html img { max-width: 100%; height: auto; display: block; border-radius: 12px; margin: 1em auto; }
+.dav-html code { background: #f3f4f6; border-radius: 6px; padding: .1em .35em; }
+.dav-html pre { background: #f3f4f6; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 12px 14px; overflow-x: auto; }
+.dav-html table { width: 100%; border-collapse: collapse; margin: 1.2em 0; }
+.dav-html th, .dav-html td { text-align: left; padding: .6em .6em; border-bottom: 1px solid rgba(0,0,0,.08); }
+.dav-html strong { font-weight: 600; }
+.dav-html em { font-style: italic; }
+
+/* Tweak Tailwind Typography for our brand */
+.prose.dav-article { line-height: 1.52; }
+.prose.dav-article :where(p, li) { line-height: inherit; }
+.prose.dav-article :where(ul>li)::marker { color: #111111; }
+.prose.dav-article :where(ol>li)::marker { color: #111111; }
+.prose.dav-article :where(p) { margin: .7em 0; }
+.prose.dav-article :where(ul, ol) { margin: .7em 0; }
+.prose.dav-article :where(li) { margin: .2em 0; }
+.prose.dav-article :where(h1,h2,h3) { margin: 1.1em 0 .5em; letter-spacing: -0.2px; }
+.prose.dav-article :where(blockquote) { color:#374151; font-style: italic; border-left-color: rgba(0,0,0,.2); }
+.prose.dav-article :where(code) { background: #f3f4f6; border-radius: 6px; padding: .1em .35em; }
+.prose.dav-article :where(pre) { background: #f3f4f6; border: 1px solid rgba(0,0,0,.06); border-radius: 12px; padding: 12px 14px; }
+.dav-article { --tw-prose-links: #0ea5e9; }
+.dav-article :where(a) { color:#0ea5e9; text-decoration: underline; }
+.dav-article :where(a:hover) { color:#0284c7; }
+
+
+
+
+
+
+
+
+
+
