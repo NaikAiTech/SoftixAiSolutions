@@ -127,7 +127,7 @@ const Index = () => {
 
               {/* Main Image */}
               <motion.img
-                src="./images/contact.jpg"
+                src="./images/hero.jpg"
                 alt="Developer working on laptop"
                 className="relative z-10 w-[420px] md:w-[420px] rounded-2xl"
               />
