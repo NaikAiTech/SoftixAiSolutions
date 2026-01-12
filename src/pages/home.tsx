@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Network, Layers, Shield, Cpu, Cloud, Zap } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
+// import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceCard } from "@/components/ui/ServiceCard";
@@ -142,7 +142,7 @@ const Index = () => {
                 </div>
 
                 <div className="flex-1 relative bg-card">
-                  <ParticleCanvas />
+                  {/* <ParticleCanvas /> */}
 
                   {/* Floating Data Widget */}
                   <motion.div
