@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Softix AI Solution Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+
+    /* Primary: Softix Green #66ba36 */
+    --primary: 95 55% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 95 55% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 95 55% 47%;
+
+    --radius: 0.5rem;
+
+    /* Surface colors */
+    --surface: 210 40% 98%;
+    --surface-foreground: 222 84% 5%;
+
+    /* Accent variations */
+    --accent-dim: 95 55% 47% / 0.1;
+    --accent-glow: 95 55% 47% / 0.3;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 240 6% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 95 55% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 95 55% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 95 55% 47%;
+
+    --surface: 217 33% 10%;
+    --surface-foreground: 210 40% 98%;
+
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 224 76% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .card-glass {
+    @apply bg-card/70 backdrop-blur-xl border border-border/80 shadow-lg transition-all duration-500;
+  }
+
+  .card-glass:hover {
+    @apply bg-card/95 border-primary shadow-xl -translate-y-1;
+    box-shadow: 0 10px 40px hsl(var(--accent-glow));
+  }
+
+  /* Neon Button */
+  .btn-neon {
+    @apply bg-transparent text-primary border-2 border-primary font-semibold relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-neon:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: 0 4px 15px hsl(var(--accent-glow));
+  }
+
+  /* Solid Primary Button */
+  .btn-solid {
+    @apply bg-primary text-primary-foreground font-semibold transition-all duration-300;
+    box-shadow: 0 4px 6px hsl(var(--accent-dim));
+  }
+
+  .btn-solid:hover {
+    @apply brightness-110 -translate-y-0.5;
+    box-shadow: 0 8px 20px hsl(var(--accent-glow));
+  }
+
+  /* Light Input Styling */
+  .input-light {
+    @apply bg-surface border border-border text-foreground transition-all duration-300;
+  }
+
+  .input-light:focus {
+    @apply bg-background border-primary ring-1 ring-primary outline-none;
+  }
+
+  .input-light::placeholder {
+    @apply text-muted-foreground;
+  }
+
+  /* Story Link Underline Animation */
+  .story-link {
+    @apply relative inline-block;
+  }
+
+  .story-link::after {
+    content: '';
+    @apply absolute w-full h-0.5 bottom-0 left-0 bg-primary origin-bottom-right transition-transform duration-300 scale-x-0;
+  }
+
+  .story-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+
+  /* Hover Scale */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  /* Tech Grid Background */
+  .tech-grid {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, hsl(var(--foreground) / 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, hsl(var(--foreground) / 0.03) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  /* Noise Overlay */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+    @apply fixed inset-0 pointer-events-none opacity-5 z-0;
+  }
+}
+
+@layer utilities {
+  /* Selection styling */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
