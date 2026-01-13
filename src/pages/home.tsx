@@ -41,8 +41,8 @@ const projects = [
     tags: ["React", "Python", "WebSockets"],
   },
   {
-    title: "Sentinel Grid",
-    description: "Cybersecurity visualization platform for a Fortune 500 firm. Monitors 1M+ endpoints in real-time with anomaly detection.",
+    title: "Sentinel Web Dashboard",
+    description: "AI-driven enterprise web platform for real-time monitoring, anomaly detection, and actionable analytics.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600",
     tags: ["Vue.js", "Nextjs", "Ai"],
   },
@@ -93,8 +93,8 @@ const Index = () => {
               transition={{ duration: 0.8 }}
               className="flex flex-col justify-start"
             >
-              <h1 className="font-display text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
-              Building Intelligent  <br />
+              <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
+           Intelligent  <br />
                 <span className="text-primary">Software</span> with AI Automation
               </h1>
 
