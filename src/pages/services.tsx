@@ -105,22 +105,32 @@ const process = [
   {
     step: "01",
     title: "Discovery",
-    description: "We dive deep into understanding your business goals, challenges, and requirements.",
+    description: "We learn your audience, offer, and the real reasons customers convert or drop.",
   },
   {
     step: "02",
     title: "Strategy",
-    description: "Our team crafts a comprehensive technical strategy and project roadmap.",
+    description: "We define a simple, measurable process from lead → customer → repeat buyer.",
   },
   {
     step: "03",
     title: "Development",
-    description: "Agile development with regular updates and iterative improvements.",
+    description: "Architecture, data model, permissions, automation map—planned before building.",
   },
   {
     step: "04",
-    title: "Launch & Scale",
-    description: "Seamless deployment with ongoing support and optimization.",
+    title: "Build Custom Logic",
+    description: "We develop your platform with clean code, scalable structure, and real-world handling.",
+  },
+   {
+    step: "05",
+    title: "Automate & Optimize",
+    description: "We reduce manual operations using AI/workflows and optimize conversion points.",
+  },
+   {
+    step: "06",
+    title: "Scale with Confidence",
+    description: "Performance, monitoring, iteration—so your system grows with your business.",
   },
 ];
 
@@ -205,7 +215,7 @@ const Services = () => {
           <SectionHeader
             badge="Our Process"
             title="How We Work"
-            description="A proven methodology that ensures project success."
+            description="A simple, structured process focused on outcomes. No confusion, no over-engineering."
             align="center"
           />
 
