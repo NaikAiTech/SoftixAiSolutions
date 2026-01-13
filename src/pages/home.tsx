@@ -14,29 +14,29 @@ import Testimonials from "@/components/ui/Testimonials";
 const services = [
   {
     icon: Network,
-    title: "Neural Networks",
-    description: "Custom AI models trained on your proprietary data. Predictive analytics and automated decision engines.",
+    title: "AI-Powered Web Systems",
+    description: "Custom AI solutions embedded into web platforms, enabling predictive analytics, automation, and real-time intelligence.",
     features: ["TensorFlow_Integration", "Real_Time_Processing"],
   },
   {
     icon: Layers,
-    title: "Enterprise Platforms",
-    description: "High-availability SaaS architectures. Built to handle millions of requests without latency.",
+    title: "Scalable Web & SaaS Platforms",
+    description: "We design and build high-availability web and SaaS platforms capable of handling millions of users and requests without latency.",
     features: ["Next.js / React", "Microservices"],
     highlighted: true,
   },
   {
     icon: Shield,
-    title: "Cyber Infrastructure",
-    description: "Bank-grade security protocols embedded into every layer of your application stack.",
-    features: ["SOC2 Compliance", "End-to-End Encryption"],
+    title: "Secure & Intelligent Infrastructure",
+    description: "We implement enterprise-grade security across web and software platforms, ensuring that every layer of your application stack is protected.",
+    features: ["Continuous Monitoring", "End-to-End Encryption"],
   },
 ];
 
 const projects = [
   {
-    title: "Nexus Finance",
-    description: "Engineered a high-frequency trading engine. Reduced latency by 40ms and implemented real-time AI risk assessment.",
+    title: "Web & AI Projects",
+    description: "Explore some of our recent projects where we combined cutting-edge web development with AI-powered solutions. From high-performance platforms to intelligent automation systems",
     image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=1600",
     tags: ["React", "Python", "WebSockets"],
   },
@@ -44,7 +44,7 @@ const projects = [
     title: "Sentinel Grid",
     description: "Cybersecurity visualization platform for a Fortune 500 firm. Monitors 1M+ endpoints in real-time with anomaly detection.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600",
-    tags: ["Vue.js", "GoLang", "Elastic"],
+    tags: ["Vue.js", "Nextjs", "Ai"],
   },
 ];
 
@@ -94,12 +94,12 @@ const Index = () => {
               className="flex flex-col justify-start"
             >
               <h1 className="font-display text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
-                Engineering <br />
-                <span className="text-primary">Intelligent</span> Future.
+              Building Intelligent  <br />
+                <span className="text-primary">Software</span> with AI Automation
               </h1>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-lg border-l-4 border-primary pl-6 bg-gradient-to-r from-primary/5 to-transparent py-2">
-                We engineer intelligent digital ecosystems that blend cutting-edge design with scalable, enterprise-ready technology—built for performance, security, and growth.
+               We design and develop intelligent web and software solutions powered by AI automation. From scalable web platforms to smart business workflows, we help companies streamline operations, enhance productivity, and grow faster with future-ready technology.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-5">
@@ -178,7 +178,7 @@ const Index = () => {
       {/* Services Section */}
       <section id="capabilities" className="py-32 relative z-10 bg-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader badge="Capabilities" title="System Architecture" description="Precision tools for complex problems." />
+          <SectionHeader badge="Capabilities" title="Intelligent Architecture for Complex Systems" description="Built for reliability and data protection" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (
