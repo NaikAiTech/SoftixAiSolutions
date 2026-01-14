@@ -79,9 +79,9 @@ const Index = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
+              {/* <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
                 System V4.0 Online
-              </span>
+              </span> */}
             </motion.div>
           </motion.div>
 
