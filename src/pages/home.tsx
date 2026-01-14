@@ -37,13 +37,13 @@ const projects = [
   {
     title: "Web & AI Projects",
     description: "Explore some of our recent projects where we combined cutting-edge web development with AI-powered solutions. From high-performance platforms to intelligent automation systems",
-    image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=1600",
+    image: "./images/1port.avif",
     tags: ["React", "Python", "WebSockets"],
   },
   {
     title: "Sentinel Web Dashboard",
     description: "AI-driven enterprise web platform for real-time monitoring, anomaly detection, and actionable analytics.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600",
+    image: "./images/2port.avif",
     tags: ["Vue.js", "Nextjs", "Ai"],
   },
 ];
@@ -178,7 +178,7 @@ const Index = () => {
       {/* Services Section */}
       <section id="capabilities" className="py-32 relative z-10 bg-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader badge="Capabilities" title="Intelligent Architecture for Complex Systems" description="Built for reliability and data protection" />
+          <SectionHeader badge="Capabilities" title="Intelligent Architecture " description="Built for reliability and data protection" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, index) => (

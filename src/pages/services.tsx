@@ -257,9 +257,9 @@ const Services = () => {
               <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold">
                 Get Started
               </Link>
-              <Link href="/pricing" className="btn-neon px-10 py-5 rounded-lg text-lg font-bold">
+              {/* <Link href="/pricing" className="btn-neon px-10 py-5 rounded-lg text-lg font-bold">
                 View Pricing
-              </Link>
+              </Link> */}
             </div>
           </AnimatedSection>
         </div>
