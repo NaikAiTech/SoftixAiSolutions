@@ -140,11 +140,11 @@ const Index = () => {
                   <div className="ml-auto font-mono text-[10px] text-primary font-bold">● LIVE</div>
                 </div>
                 
-                <div className="flex-1 relative bg-card">
+                {/* <div className="flex-1 relative bg-card"> */}
                   {/* <ParticleCanvas /> */}
                   
                   {/* Floating Data Widget */}
-                  <motion.div
+                  {/* <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1, duration: 0.5 }}
@@ -170,8 +170,8 @@ const Index = () => {
                   </motion.div>
                 </div>
               </div>
-            </motion.div>
-          </div>
+            </motion.div> */}
+          {/* </div> */}
 
           <div className="mt-12">
             <TechStack />
