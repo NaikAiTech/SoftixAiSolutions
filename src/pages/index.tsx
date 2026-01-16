@@ -140,38 +140,57 @@ const Index = () => {
                   <div className="ml-auto font-mono text-[10px] text-primary font-bold">● LIVE</div>
                 </div>
                 
-                {/* <div className="flex-1 relative bg-card"> */}
-                  {/* <ParticleCanvas /> */}
-                  
-                  {/* Floating Data Widget */}
-                  {/* <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.5 }}
-                    className="absolute bottom-6 right-6 bg-card/90 backdrop-blur border border-border p-4 rounded-lg shadow-xl w-48"
-                  >
-                    <div className="text-xs text-muted-foreground mb-1 font-medium">Server Load</div>
-                    <div className="flex items-end gap-2">
-                      <span className="text-2xl font-bold text-foreground">34ms</span>
-                      <span className="text-xs text-primary mb-1 font-bold">▼ 12%</span>
-                    </div>
-                    <div className="flex items-end gap-1 h-6 mt-2">
-                      {[2, 4, 5, 3, 2, 4].map((h, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ height: 0 }}
-                          animate={{ height: h * 4 }}
-                          transition={{ delay: 1.2 + i * 0.1, duration: 0.3 }}
-                          className="w-1 bg-primary"
-                          style={{ opacity: 0.3 + (h / 5) * 0.7 }}
-                        />
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div> */}
-          {/* </div> */}
+              {/* RIGHT VISUAL – UPDATED */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.3, duration: 0.8 }}
+  className="relative flex justify-center items-center w-full h-[500px] lg:h-full"
+>
+  {/* Blob Background */}
+  <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] flex items-center justify-center" />
+
+  {/* Main Image */}
+  <motion.img
+    src="./images/hero.jpg"
+    alt="Developer working on laptop"
+    className="relative z-10 w-[520px] md:w-[520px] rounded-2xl"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+  />
+
+  {/* Floating Card – Projects */}
+  <motion.div
+    className="absolute top-8 left-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+    animate={{ x: [0, 12, 0], y: [0, -10, 0], rotate: [0, 4, 0] }}
+    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <p className="text-sm font-bold text-gray-900">2K+</p>
+    <p className="text-xs text-gray-500">Projects</p>
+  </motion.div>
+
+  {/* Floating Card – Rating */}
+  <motion.div
+    className="absolute top-12 right-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+    animate={{ scale: [1, 1.05, 1], y: [0, 10, 0] }}
+    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <p className="text-sm font-bold text-gray-900">⭐ 4.8</p>
+    <p className="text-xs text-gray-500">Satisfaction</p>
+  </motion.div>
+
+  {/* Floating Card – Experience */}
+  <motion.div
+    className="absolute bottom-6 bg-white rounded-xl shadow-xl px-6 py-3 z-20"
+    animate={{ y: [0, -10, 0], rotate: [0, -3, 0] }}
+    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <p className="text-sm font-bold text-gray-900">Software Developer</p>
+    <p className="text-xs text-gray-500">5+ Years Experience</p>
+  </motion.div>
+</motion.div>
+
 
           <div className="mt-12">
             <TechStack />
