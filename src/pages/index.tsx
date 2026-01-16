@@ -121,75 +121,77 @@ const Index = () => {
                 </Link>
               </div>
             </motion.div>
-
-            {/* Visual / Canvas */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative w-full h-[500px] lg:h-full"
-            >
-              <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent opacity-60 blur-3xl" />
-              
-              <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-float">
-                {/* Window Controls */}
-                <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
-                  <div className="w-3 h-3 rounded-full bg-border" />
-                  <div className="w-3 h-3 rounded-full bg-border" />
-                  <div className="w-3 h-3 rounded-full bg-border" />
-                  <div className="ml-auto font-mono text-[10px] text-primary font-bold">● LIVE</div>
-                </div>
-                
-              {/* RIGHT VISUAL – UPDATED */}
+{/* Visual / Canvas */}
 <motion.div
   initial={{ opacity: 0, scale: 0.9 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ delay: 0.3, duration: 0.8 }}
-  className="relative flex justify-center items-center w-full h-[500px] lg:h-full"
+  className="relative w-full h-[500px] lg:h-full"
 >
-  {/* Blob Background */}
-  <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] flex items-center justify-center" />
+  {/* Glow */}
+  <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent opacity-60 blur-3xl" />
 
-  {/* Main Image */}
-  <motion.img
-    src="./images/hero.jpg"
-    alt="Developer working on laptop"
-    className="relative z-10 w-[520px] md:w-[520px] rounded-2xl"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-  />
+  {/* Card Container */}
+  <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    
+    {/* Window Controls */}
+    <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
+      <div className="w-3 h-3 rounded-full bg-border" />
+      <div className="w-3 h-3 rounded-full bg-border" />
+      <div className="w-3 h-3 rounded-full bg-border" />
+      <div className="ml-auto font-mono text-[10px] text-primary font-bold">● LIVE</div>
+    </div>
 
-  {/* Floating Card – Projects */}
-  <motion.div
-    className="absolute top-8 left-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
-    animate={{ x: [0, 12, 0], y: [0, -10, 0], rotate: [0, 4, 0] }}
-    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-  >
-    <p className="text-sm font-bold text-gray-900">2K+</p>
-    <p className="text-xs text-gray-500">Projects</p>
-  </motion.div>
+    {/* RIGHT VISUAL CONTENT */}
+    <div className="relative flex-1 flex justify-center items-center">
+      
+      {/* Blob */}
+      <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" />
 
-  {/* Floating Card – Rating */}
-  <motion.div
-    className="absolute top-12 right-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
-    animate={{ scale: [1, 1.05, 1], y: [0, 10, 0] }}
-    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-  >
-    <p className="text-sm font-bold text-gray-900">⭐ 4.8</p>
-    <p className="text-xs text-gray-500">Satisfaction</p>
-  </motion.div>
+      {/* Image */}
+      <motion.img
+        src="/images/hero.jpg"
+        alt="Developer working on laptop"
+        className="relative z-10 w-[520px] rounded-2xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      />
 
-  {/* Floating Card – Experience */}
-  <motion.div
-    className="absolute bottom-6 bg-white rounded-xl shadow-xl px-6 py-3 z-20"
-    animate={{ y: [0, -10, 0], rotate: [0, -3, 0] }}
-    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-  >
-    <p className="text-sm font-bold text-gray-900">Software Developer</p>
-    <p className="text-xs text-gray-500">5+ Years Experience</p>
-  </motion.div>
+      {/* Floating – Projects */}
+      <motion.div
+        className="absolute top-8 left-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+        animate={{ x: [0, 12, 0], y: [0, -10, 0], rotate: [0, 4, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <p className="text-sm font-bold text-gray-900">2K+</p>
+        <p className="text-xs text-gray-500">Projects</p>
+      </motion.div>
+
+      {/* Floating – Rating */}
+      <motion.div
+        className="absolute top-12 right-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+        animate={{ scale: [1, 1.05, 1], y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <p className="text-sm font-bold text-gray-900">⭐ 4.8</p>
+        <p className="text-xs text-gray-500">Satisfaction</p>
+      </motion.div>
+
+      {/* Floating – Experience */}
+      <motion.div
+        className="absolute bottom-6 bg-white rounded-xl shadow-xl px-6 py-3 z-20"
+        animate={{ y: [0, -10, 0], rotate: [0, -3, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <p className="text-sm font-bold text-gray-900">Software Developer</p>
+        <p className="text-xs text-gray-500">5+ Years Experience</p>
+      </motion.div>
+
+    </div>
+  </div>
 </motion.div>
+
 
 
           <div className="mt-12">
