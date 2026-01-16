@@ -102,7 +102,7 @@ export default function Index() {
               transition={{ duration: 0.8 }}
               className="relative w-full h-[500px]"
             >
-              <div className="absolute inset-0 bg-card rounded-2xl border shadow-xl flex items-center justify-center">
+              <div className="absolute inset-0 rounded-2xl  flex items-center justify-center">
 
                 {/* Blob */}
                 <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" />
