@@ -94,58 +94,50 @@ export default function Index() {
                 </Link>
               </div>
             </motion.div>
-
-            {/* RIGHT VISUAL */}
+{/* RIGHT VISUAL – REPLACED */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full h-[500px]"
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="relative flex justify-center items-center w-full h-[500px] lg:h-full"
             >
-              <div className="absolute inset-0 rounded-2xl  flex items-center justify-center">
+              {/* Blob background */}
+              <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] flex items-center justify-center" />
 
-                {/* Blob */}
-                <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" />
+              {/* Main Image */}
+              <motion.img
+                src="./images/hero.jpg"
+                alt="Developer working on laptop"
+                className="relative z-10 w-[520px] md:w-[520px] rounded-2xl"
+              />
 
-                {/* Image */}
-                <motion.img
-                  src="/images/hero.jpg"
-                  alt="Developer"
-                  className="relative z-10 w-[420px] rounded-2xl"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                />
+              {/* Floating Cards */}
+              <motion.div
+                className="absolute top-8 left-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+                animate={{ x: [0, 12, 0], y: [0, -10, 0], rotate: [0, 4, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <p className="text-sm font-bold text-gray-900">2K+</p>
+                <p className="text-xs text-gray-500">Projects</p>
+              </motion.div>
 
-                {/* Floating Cards */}
-                <motion.div
-                  className="absolute top-8 left-6 bg-white px-4 py-2 rounded-xl shadow"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 4 }}
-                >
-                  <p className="font-bold">2K+</p>
-                  <p className="text-xs">Projects</p>
-                </motion.div>
+              <motion.div
+                className="absolute top-12 right-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
+                animate={{ scale: [1, 1.05, 1], y: [0, 10, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <p className="text-sm font-bold text-gray-900">⭐ 4.8</p>
+                <p className="text-xs text-gray-500">Satisfaction</p>
+              </motion.div>
 
-                <motion.div
-                  className="absolute top-8 right-6 bg-white px-4 py-2 rounded-xl shadow"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ repeat: Infinity, duration: 4 }}
-                >
-                  <p className="font-bold">⭐ 4.8</p>
-                  <p className="text-xs">Rating</p>
-                </motion.div>
-
-                <motion.div
-                  className="absolute bottom-8 bg-white px-6 py-3 rounded-xl shadow"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 5 }}
-                >
-                  <p className="font-bold">5+ Years</p>
-                  <p className="text-xs">Experience</p>
-                </motion.div>
-
-              </div>
+              <motion.div
+                className="absolute bottom-6 bg-white rounded-xl shadow-xl px-6 py-3 z-20"
+                animate={{ y: [0, -10, 0], rotate: [0, -3, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <p className="text-sm font-bold text-gray-900">Software Developer</p>
+                <p className="text-xs text-gray-500">5+ Years Experience</p>
+              </motion.div>
             </motion.div>
 
           </div>
