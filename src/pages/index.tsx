@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Network, Layers, Shield, Cpu, Cloud, Zap } from "lucide-react";
+import { ArrowRight, Network, Layers, Shield } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-// import { ParticleCanvas } from "@/components/ui/ParticleCanvas";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceCard } from "@/components/ui/ServiceCard";
@@ -16,36 +15,38 @@ const services = [
   {
     icon: Network,
     title: "Neural Networks",
-    description: "Custom AI models trained on your proprietary data. Predictive analytics and automated decision engines.",
-    features: ["TensorFlow_Integration", "Real_Time_Processing"],
+    description: "Custom AI models trained on your proprietary data.",
+    features: ["TensorFlow", "Real-Time AI"],
   },
   {
     icon: Layers,
     title: "Enterprise Platforms",
-    description: "High-availability SaaS architectures. Built to handle millions of requests without latency.",
-    features: ["Next.js / React", "Microservices"],
+    description: "Scalable SaaS systems built for performance.",
+    features: ["Next.js", "Microservices"],
     highlighted: true,
   },
   {
     icon: Shield,
     title: "Cyber Infrastructure",
-    description: "Bank-grade security protocols embedded into every layer of your application stack.",
-    features: ["SOC2 Compliance", "End-to-End Encryption"],
+    description: "Bank-grade security across your stack.",
+    features: ["SOC2", "Encryption"],
   },
 ];
 
 const projects = [
   {
     title: "Nexus Finance",
-    description: "Engineered a high-frequency trading engine. Reduced latency by 40ms and implemented real-time AI risk assessment.",
-    image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=1600",
-    tags: ["React", "Python", "WebSockets"],
+    description: "High-frequency trading platform with AI risk analysis.",
+    image:
+      "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=1600",
+    tags: ["React", "Python"],
   },
   {
     title: "Sentinel Grid",
-    description: "Cybersecurity visualization platform for a Fortune 500 firm. Monitors 1M+ endpoints in real-time with anomaly detection.",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600",
-    tags: ["Vue.js", "GoLang", "Elastic"],
+    description: "Enterprise cybersecurity visualization system.",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600",
+    tags: ["Vue", "Go"],
   },
 ];
 
@@ -53,231 +54,152 @@ const stats = [
   { value: 150, suffix: "+", label: "Projects Delivered" },
   { value: 50, suffix: "+", label: "Enterprise Clients" },
   { value: 99, suffix: "%", label: "Client Satisfaction" },
-  { value: 24, suffix: "/7", label: "Support Available" },
+  { value: 24, suffix: "/7", label: "Support" },
 ];
 
-const Index = () => {
+export default function Index() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Background Elements */}
-      <div className="noise-overlay" />
-      <div className="fixed inset-0 tech-grid z-0 pointer-events-none" />
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0" />
-
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-32 min-h-screen flex flex-col justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-surface border border-border mb-8 shadow-sm"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground font-bold">
-                System V4.0 Online
-              </span>
-            </motion.div>
-          </motion.div>
+      {/* HERO */}
+      <section className="pt-40 pb-32 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
-            {/* Content (from headline to buttons) */}
+            {/* LEFT */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="flex flex-col justify-start"
             >
-
-              <h1 className="font-display text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
+              <h1 className="text-5xl lg:text-7xl font-bold mb-8">
                 Engineering <br />
-                <span className="text-primary">Intelligent</span> Future.
+                <span className="text-primary">Intelligent</span> Future
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-lg border-l-4 border-primary pl-6 bg-gradient-to-r from-primary/5 to-transparent py-2">
-                We engineer intelligent digital ecosystems that blend cutting-edge design with scalable, enterprise-ready technology—built for performance, security, and growth.
+              <p className="text-lg text-muted-foreground mb-10 max-w-lg">
+                We build intelligent, scalable and secure digital systems.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-5">
-                <Link href="/contact" className="btn-solid px-8 py-4 rounded-lg text-center font-bold">
+              <div className="flex gap-4">
+                <Link href="/contact" className="btn-solid px-8 py-4 font-bold">
                   Deploy Solution
                 </Link>
                 <Link
                   href="/portfolio"
-                  className="px-8 py-4 rounded-lg border border-border text-foreground hover:bg-surface transition-colors text-center flex items-center justify-center gap-2 group font-medium"
+                  className="border px-8 py-4 rounded-lg flex items-center gap-2"
                 >
-                  View Case Studies{" "}
-                  <ArrowRight size={16} className="text-primary transform group-hover:translate-x-1 transition-transform" />
+                  View Case Studies <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
-{/* Visual / Canvas */}
-<motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ delay: 0.3, duration: 0.8 }}
-  className="relative w-full h-[500px] lg:h-full"
->
-  {/* Glow */}
-  <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent opacity-60 blur-3xl" />
 
-  {/* Card Container */}
-  <div className="absolute inset-0 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col">
-    
-    {/* Window Controls */}
-    <div className="h-10 bg-surface border-b border-border flex items-center px-4 gap-2">
-      <div className="w-3 h-3 rounded-full bg-border" />
-      <div className="w-3 h-3 rounded-full bg-border" />
-      <div className="w-3 h-3 rounded-full bg-border" />
-      <div className="ml-auto font-mono text-[10px] text-primary font-bold">● LIVE</div>
-    </div>
+            {/* RIGHT VISUAL */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full h-[500px]"
+            >
+              <div className="absolute inset-0 bg-card rounded-2xl border shadow-xl flex items-center justify-center">
 
-    {/* RIGHT VISUAL CONTENT */}
-    <div className="relative flex-1 flex justify-center items-center">
-      
-      {/* Blob */}
-      <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" />
+                {/* Blob */}
+                <div className="absolute w-full h-full bg-[#66ba36] rounded-[60%_40%_30%_70%/60%_30%_70%_40%]" />
 
-      {/* Image */}
-      <motion.img
-        src="/images/hero.jpg"
-        alt="Developer working on laptop"
-        className="relative z-10 w-[520px] rounded-2xl"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      />
+                {/* Image */}
+                <motion.img
+                  src="/images/hero.jpg"
+                  alt="Developer"
+                  className="relative z-10 w-[420px] rounded-2xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                />
 
-      {/* Floating – Projects */}
-      <motion.div
-        className="absolute top-8 left-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
-        animate={{ x: [0, 12, 0], y: [0, -10, 0], rotate: [0, 4, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="text-sm font-bold text-gray-900">2K+</p>
-        <p className="text-xs text-gray-500">Projects</p>
-      </motion.div>
+                {/* Floating Cards */}
+                <motion.div
+                  className="absolute top-8 left-6 bg-white px-4 py-2 rounded-xl shadow"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4 }}
+                >
+                  <p className="font-bold">2K+</p>
+                  <p className="text-xs">Projects</p>
+                </motion.div>
 
-      {/* Floating – Rating */}
-      <motion.div
-        className="absolute top-12 right-0 bg-white rounded-xl shadow-xl px-4 py-3 z-20"
-        animate={{ scale: [1, 1.05, 1], y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="text-sm font-bold text-gray-900">⭐ 4.8</p>
-        <p className="text-xs text-gray-500">Satisfaction</p>
-      </motion.div>
+                <motion.div
+                  className="absolute top-8 right-6 bg-white px-4 py-2 rounded-xl shadow"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4 }}
+                >
+                  <p className="font-bold">⭐ 4.8</p>
+                  <p className="text-xs">Rating</p>
+                </motion.div>
 
-      {/* Floating – Experience */}
-      <motion.div
-        className="absolute bottom-6 bg-white rounded-xl shadow-xl px-6 py-3 z-20"
-        animate={{ y: [0, -10, 0], rotate: [0, -3, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="text-sm font-bold text-gray-900">Software Developer</p>
-        <p className="text-xs text-gray-500">5+ Years Experience</p>
-      </motion.div>
+                <motion.div
+                  className="absolute bottom-8 bg-white px-6 py-3 rounded-xl shadow"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 5 }}
+                >
+                  <p className="font-bold">5+ Years</p>
+                  <p className="text-xs">Experience</p>
+                </motion.div>
 
-    </div>
-  </div>
-</motion.div>
+              </div>
+            </motion.div>
 
+          </div>
 
-
-          <div className="mt-12">
+          <div className="mt-16">
             <TechStack />
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      {/* STATS */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-6">
           <StatsCounter stats={stats} />
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="capabilities" className="py-32 relative z-10 bg-surface">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader
-            badge="Capabilities"
-            title="System Architecture"
-            description="Precision tools for complex problems."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard key={service.title} {...service} delay={index * 0.1} />
+      {/* SERVICES */}
+      <section className="py-32 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeader badge="Capabilities" title="System Architecture" />
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {services.map((s, i) => (
+              <ServiceCard key={s.title} {...s} delay={i * 0.1} />
             ))}
           </div>
-
-          <AnimatedSection delay={0.4} className="mt-12 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-primary font-bold hover:text-foreground transition-colors group"
-            >
-              Explore All Services{" "}
-              <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
-      {/* Work Section */}
-      <section id="work" className="py-32 border-t border-border bg-background relative z-10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeader badge="Selected Operations" title="Featured Projects" />
-
-          <div className="space-y-32">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} {...project} reverse={index % 2 !== 0} delay={0.1} />
+      {/* PROJECTS */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeader badge="Work" title="Featured Projects" />
+          <div className="space-y-24 mt-20">
+            {projects.map((p, i) => (
+              <ProjectCard key={p.title} {...p} reverse={i % 2 !== 0} />
             ))}
           </div>
-
-          <AnimatedSection delay={0.2} className="mt-16 text-center">
-            <Link
-              href="/portfolio"
-              className="btn-neon px-8 py-4 rounded-lg text-center font-bold inline-block"
-            >
-              View All Projects
-            </Link>
-          </AnimatedSection>
         </div>
       </section>
 
       <Testimonials />
 
-      {/* CTA Section */}
-      <section className="py-32 relative z-10 bg-surface">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Ready to Build Something Amazing?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10">
-              Let's transform your vision into a high-performance digital solution.
-            </p>
-            <Link href="/contact" className="btn-solid px-10 py-5 rounded-lg text-lg font-bold inline-block">
-              Start Your Project
-            </Link>
-          </AnimatedSection>
-        </div>
+      {/* CTA */}
+      <section className="py-32 bg-surface text-center">
+        <h2 className="text-4xl font-bold mb-6">
+          Ready to Build Something Amazing?
+        </h2>
+        <Link href="/contact" className="btn-solid px-10 py-5 font-bold">
+          Start Your Project
+        </Link>
       </section>
 
       <Footer />
     </div>
   );
-};
-
-export default Index;
+}
