@@ -51,16 +51,16 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
             {/* Brand / Contact */}
             <div className="lg:col-span-2">
-              <h4 className="font-display font-bold text-foreground mb-4">
-                Softix AI Solutions
-              </h4>
+              
 
               <Link href="/" className="flex items-center gap-2 mb-6">
-                <div className="w-20 h-20  rounded-lg flex items-center justify-center text-primary-foreground">
+                <div className="w-25 h-25  rounded-lg flex items-center justify-center text-primary-foreground">
                <img src="./images/logo.png" />
               </div>
               </Link>
-
+<h4 className="font-display font-bold text-foreground mb-4">
+                Softix AI Solutions
+              </h4>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
                 We engineer intelligent digital ecosystems that blend cutting-edge
                 design with scalable, enterprise-ready technology—built for
