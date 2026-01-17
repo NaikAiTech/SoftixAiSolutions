@@ -56,12 +56,9 @@ export const Footer = () => {
               </h4>
 
               <Link href="/" className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold text-xl shadow-lg">
-                  S
-                </div>
-                <span className="font-display font-bold text-xl text-foreground tracking-tight">
-                  Softix<span className="text-primary">AI</span>
-                </span>
+                <div className="w-20 h-20  rounded-lg flex items-center justify-center text-primary-foreground">
+               <img src="./images/logo.png" />
+              </div>
               </Link>
 
               <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
