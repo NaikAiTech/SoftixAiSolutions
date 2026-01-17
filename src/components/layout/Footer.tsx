@@ -54,7 +54,7 @@ export const Footer = () => {
               
 
               <Link href="/" className="flex items-center gap-2 mb-6">
-                <div className="w-25 h-25  rounded-lg flex items-center justify-center text-primary-foreground">
+                <div className="w-20 h-20  rounded-lg flex items-center justify-center text-primary-foreground">
                <img src="./images/logo.png" />
               </div>
               </Link>
