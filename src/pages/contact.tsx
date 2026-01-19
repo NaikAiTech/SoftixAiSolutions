@@ -112,10 +112,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-medium text-foreground mb-1">Email</h4>
                       <a
-                        href="mailto:hello@softixai.com"
+                        href="mailto: Info@sais.pk"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        hello@softixai.com
+                        Info@sais.pk
                       </a>
                     </div>
                   </div>
