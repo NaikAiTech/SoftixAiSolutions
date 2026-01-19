@@ -38,8 +38,7 @@ const Portfolio = () => {
               Projects That <span className="text-primary">Define Excellence</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Explore our portfolio of successful projects across industries, 
-              showcasing our expertise in delivering impactful solutions.
+             Web Developer and AI Automation Specialist focused on building modern, fast, and scalable websites combined with AI-powered automation tools. My mission is to deliver digital products that streamline business operations, save time, and achieve measurable results.
             </p>
           </motion.div>
         </div>

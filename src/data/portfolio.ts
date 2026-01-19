@@ -13,31 +13,31 @@ export const portfolioCategories = ["All", "AI/ML", "Web", "Mobile", "Enterprise
 export const portfolioProjects: PortfolioProject[] = [
   {
     id: 1,
-    title: "Nexus Finance",
-    category: "Enterprise",
+    title: "Custom Business Website",
+    category: "Web Development",
     description:
-      "High-frequency trading engine with AI-powered risk assessment. Reduced latency by 40ms.",
+      "A professional and fully responsive business website designed to enhance brand presence and convert visitors into leads through a clean and user-friendly interface.",
     image:
-      "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&q=80&w=800",
+      "./images/ecommerce.avif",
     tags: ["React", "Python", "WebSockets", "TensorFlow"],
     metrics: { latency: "-40ms", accuracy: "99.9%", users: "10K+" },
   },
   {
     id: 2,
-    title: "Sentinel Grid",
-    category: "Enterprise",
-    description: "Cybersecurity visualization platform monitoring 1M+ endpoints in real-time.",
+    title: "AI Automation",
+    category: " AI Chatbot Integration",
+    description: "An AI-powered chatbot developed to automate customer support by handling common queries and providing instant responses around the clock.",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+      "./images/appdevelopment.jpg",
     tags: ["Vue.js", "GoLang", "Elastic", "Kubernetes"],
     metrics: { endpoints: "1M+", uptime: "99.99%", alerts: "Real-time" },
   },
   {
     id: 3,
-    title: "MediCare AI",
+    title: "App development",
     category: "AI/ML",
     description:
-      "AI diagnostic assistant for healthcare providers with 95% accuracy in early detection.",
+      "A custom web application built to help teams manage tasks, track progress, and improve productivity through a simple and intuitive interface.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
     tags: ["Python", "TensorFlow", "React", "HIPAA"],
