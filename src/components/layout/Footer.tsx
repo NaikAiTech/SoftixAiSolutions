@@ -69,14 +69,15 @@ export const Footer = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Mail size={16} className="text-primary" />
-                  <a
-                    href="mailto: Info@sais.pk"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Info@sais.pk
-                  </a>
-                </div>
+  <Mail size={16} className="text-primary" />
+  <a
+    href="mailto:Info@sais.pk?subject=Contact%20Request"
+    className="hover:text-primary transition-colors"
+  >
+    Info@sais.pk
+  </a>
+</div>
+
 
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <MessageCircle size={16} className="text-primary" />
