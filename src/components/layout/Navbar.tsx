@@ -54,9 +54,14 @@ export const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2"
             >
-              <div className="w-22 h-20  rounded-lg flex items-center justify-center text-primary-foreground">
-               <img src="./images/logo.png" />
-              </div>
+              <div className="w-20 h-20 rounded-lg flex items-center justify-center text-primary-foreground">
+  <img
+    src="./images/logo.png"
+    alt="Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
+
               
             </motion.div>
           </Link>
