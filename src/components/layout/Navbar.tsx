@@ -58,7 +58,7 @@ export const Navbar = () => {
   <img
     src="./images/logo.png"
     alt="Logo"
-    className="h-[5.5rem] w-auto object-contain"
+    className="h-[6.5rem] w-auto object-contain"
   />
 </div>
 
