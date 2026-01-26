@@ -1,7 +1,9 @@
-import { MessageCircle, PhoneCall } from "lucide-react";
+// import { MessageCircle,  } from "lucide-react";\
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const DISPLAY_NUMBER = "0303-2963333";
-const TEL_NUMBER = "03032963333";
+// const TEL_NUMBER = "03032963333";
 const WHATSAPP_INTL = "923032963333";
 
 export function FloatingContactButtons() {
@@ -16,11 +18,11 @@ export function FloatingContactButtons() {
         title={`WhatsApp ${DISPLAY_NUMBER}`}
       >
         <span className="flex h-full w-full items-center justify-center">
-          <MessageCircle size={22} />
+          <FaWhatsapp size={22} />
         </span>
       </a>
 
-      <a
+      {/* <a
         href={`tel:${TEL_NUMBER}`}
         className="h-12 w-12 rounded-full bg-primary text-primary-foreground shadow-lg hover:brightness-110 transition"
         aria-label={`Call ${DISPLAY_NUMBER}`}
@@ -29,7 +31,7 @@ export function FloatingContactButtons() {
         <span className="flex h-full w-full items-center justify-center">
           <PhoneCall size={22} />
         </span>
-      </a>
+      </a> */}
     </div>
   );
 }
