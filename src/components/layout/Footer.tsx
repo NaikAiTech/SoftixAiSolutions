@@ -74,7 +74,7 @@ export const Footer = () => {
     href="mailto:Info@sais.pk?subject=Contact%20Request"
     className="hover:text-primary transition-colors"
   >
-    Info@sais.pk
+   admin@sais.pk
   </a>
 </div>
 
